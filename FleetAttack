@@ -1,0 +1,31 @@
+Java
+import java.util.HashMap;
+import java.util.Map;
+
+public class FleetAttack {
+
+    public static String attack(String target, Map<String, Integer> fleet) {
+        if (fleet.getOrDefault("fighters", 0) > 0) {
+            // Simulate battle logic here
+            String battleOutcome = simulateBattle(target, fleet);
+            return battleOutcome; // Return battle report
+        }
+        return "No ships available for attack.";
+    }
+
+    private static String simulateBattle(String target, Map<String, Integer> fleet) {
+        // Simulate battle logic
+        // This is a placeholder for the actual battle simulation
+        return "Battle report: Successfully attacked " + target + " with " + fleet.get("fighters") + " fighters.";
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        Map<String, Integer> fleet = new HashMap<>();
+        fleet.put("fighters", 10);
+
+        String target = "Enemy Base";
+        String result = attack(target, fleet);
+        System.out.println(result);
+    }
+}
